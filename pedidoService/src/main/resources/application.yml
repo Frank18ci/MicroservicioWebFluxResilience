@@ -6,3 +6,8 @@ resilience4j:
         wait-duration-in-open-state: 10000
         permitted-number-of-calls-in-half-open-state: 3
         sliding-window-size: 10
+
+eureka:
+  client:
+    service-url:
+        defaultZone: http://localhost:8761/eureka/
