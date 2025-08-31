@@ -1,0 +1,20 @@
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+      - id: cliente-service
+        uri: lb://cliente-service
+        predicates:
+        - Path=/cliente/**
+      - id: pedido-service
+        uri: lb://pedido-service
+        predicates:
+        - Path=/pedido/**
+eureka:
+  client:
+    service-url:
+        defaultZone: http://localhost:8761/eureka/
